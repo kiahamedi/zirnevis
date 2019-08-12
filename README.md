@@ -1,2 +1,2 @@
 # zirnevis
-download subtitle only with name movies
+download subtitle only with movies name
