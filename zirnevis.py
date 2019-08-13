@@ -57,10 +57,6 @@ for item in soup.find_all('li',{"class":"item"}):
         else:
             continue
         
-
-
-            
-            
-
-
-
+# Move to Folder
+MovieDirectory = movie + ' subtitles'
+system("mkdir '" + MovieDirectory + "' && mv *.srt '" + MovieDirectory + "'")
