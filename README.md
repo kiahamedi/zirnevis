@@ -8,7 +8,7 @@ Open source application for download subtitle only by movie name
 ![alt text](https://raw.githubusercontent.com/kiahamedi/zirnevis/master/ScreenshotGUI.png)
 
 ## Installation
-> Arch Linux: yaours -S zirnevis
+> Arch Linux: yaourt -S zirnevis
 
 ## Uninstall
 > Arch Linux: sudo pacman -R zirnevis
