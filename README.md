@@ -1,8 +1,17 @@
 # zirnevis
 download subtitle only with movies name
+> version 1.0.0
 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-![alt text](https://raw.githubusercontent.com/kiahamedi/zirnevis/master/Screenshot.png)
+![alt text](https://raw.githubusercontent.com/kiahamedi/zirnevis/master/ScreenshotGUI.png)
+
+## Installation
+> Arch Linux: yaours -S zirnevis
+
+## Uninstall
+> Arch Linux: sudo pacman -R zirnevis
 
 ## Toturial
 for more information visit:<br>
