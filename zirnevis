@@ -1,0 +1,252 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'zirnevisQT.ui'
+#
+# Created by: PyQt5 UI code generator 5.12.2
+#
+# WARNING! All changes made in this file will be lost!
+"""
+Created on Tue Aug 13 00:30:07 2019
+
+@author: kia
+
+
+site: kiahamedi.ir
+instagram: kia.hamediii
+
+"""
+import requests
+from bs4 import BeautifulSoup
+from os import system
+import getpass
+from time import gmtime, strftime
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QFileDialog
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(751, 330)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.movieName = QtWidgets.QLineEdit(self.centralwidget)
+        self.movieName.setGeometry(QtCore.QRect(120, 10, 191, 25))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.movieName.sizePolicy().hasHeightForWidth())
+        self.movieName.setSizePolicy(sizePolicy)
+        self.movieName.setObjectName("movieName")
+        self.downloadPath = QtWidgets.QLineEdit(self.centralwidget)
+        self.downloadPath.setGeometry(QtCore.QRect(120, 50, 191, 25))
+        self.downloadPath.setObjectName("downloadPath")
+        self.btnStart = QtWidgets.QPushButton(self.centralwidget)
+        self.btnStart.setGeometry(QtCore.QRect(280, 110, 111, 25))
+        self.btnStart.setObjectName("btnStart")
+        self.downloadPathButton = QtWidgets.QPushButton(self.centralwidget)
+        self.downloadPathButton.setGeometry(QtCore.QRect(320, 50, 83, 25))
+        self.downloadPathButton.setObjectName("downloadPathButton")
+        self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox.setGeometry(QtCore.QRect(10, 90, 251, 101))
+        self.groupBox.setObjectName("groupBox")
+        self.rdbBRRip = QtWidgets.QRadioButton(self.groupBox)
+        self.rdbBRRip.setGeometry(QtCore.QRect(90, 70, 71, 23))
+        self.rdbBRRip.setObjectName("rdbBRRip")
+        self.rdbHDTV = QtWidgets.QRadioButton(self.groupBox)
+        self.rdbHDTV.setGeometry(QtCore.QRect(170, 70, 61, 23))
+        self.rdbHDTV.setObjectName("rdbHDTV")
+        self.rdbWebRip = QtWidgets.QRadioButton(self.groupBox)
+        self.rdbWebRip.setGeometry(QtCore.QRect(170, 30, 71, 23))
+        self.rdbWebRip.setObjectName("rdbWebRip")
+        self.rdbDVDRip = QtWidgets.QRadioButton(self.groupBox)
+        self.rdbDVDRip.setGeometry(QtCore.QRect(10, 70, 81, 23))
+        self.rdbDVDRip.setObjectName("rdbDVDRip")
+        self.rdbBlueRay = QtWidgets.QRadioButton(self.groupBox)
+        self.rdbBlueRay.setGeometry(QtCore.QRect(10, 30, 71, 23))
+        self.rdbBlueRay.setObjectName("rdbBlueRay")
+        self.rdbWebDL = QtWidgets.QRadioButton(self.groupBox)
+        self.rdbWebDL.setGeometry(QtCore.QRect(90, 30, 71, 23))
+        self.rdbWebDL.setObjectName("rdbWebDL")
+        self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox_2.setGeometry(QtCore.QRect(10, 200, 211, 61))
+        self.groupBox_2.setObjectName("groupBox_2")
+        self.res1080 = QtWidgets.QRadioButton(self.groupBox_2)
+        self.res1080.setGeometry(QtCore.QRect(130, 30, 61, 23))
+        self.res1080.setObjectName("res1080")
+        self.res480 = QtWidgets.QRadioButton(self.groupBox_2)
+        self.res480.setGeometry(QtCore.QRect(10, 30, 51, 23))
+        self.res480.setObjectName("res480")
+        self.res720 = QtWidgets.QRadioButton(self.groupBox_2)
+        self.res720.setGeometry(QtCore.QRect(70, 30, 51, 23))
+        self.res720.setObjectName("res720")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(10, 10, 81, 21))
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(10, 50, 101, 21))
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(690, 270, 51, 20))
+        self.label_3.setObjectName("label_3")
+        self.groupBox_3 = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox_3.setGeometry(QtCore.QRect(410, 10, 331, 251))
+        self.groupBox_3.setObjectName("groupBox_3")
+        self.txtlogs = QtWidgets.QTextBrowser(self.groupBox_3)
+        self.txtlogs.setGeometry(QtCore.QRect(0, 20, 331, 231))
+        self.txtlogs.setObjectName("txtlogs")
+        self.detailsBtn = QtWidgets.QPushButton(self.centralwidget)
+        self.detailsBtn.setGeometry(QtCore.QRect(280, 140, 111, 25))
+        self.detailsBtn.setObjectName("detailsBtn")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(10, 270, 271, 21))
+        self.label_4.setObjectName("label_4")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 751, 22))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        self.downloadPathButton.clicked.connect(self.getPathDialog)
+        self.btnStart.clicked.connect(self.run)
+        self.detailsBtn.clicked.connect(self.details)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.downloadPath.setText(_translate("MainWindow", "/home/"+getpass.getuser()+"/Downloads"))
+        self.btnStart.setText(_translate("MainWindow", "Start"))
+        self.downloadPathButton.setText(_translate("MainWindow", "Change"))
+        self.groupBox.setTitle(_translate("MainWindow", "Quality"))
+        self.rdbBRRip.setText(_translate("MainWindow", "BRRip"))
+        self.rdbHDTV.setText(_translate("MainWindow", "HDTV"))
+        self.rdbWebRip.setText(_translate("MainWindow", "WebRip"))
+        self.rdbDVDRip.setText(_translate("MainWindow", "DVDRip"))
+        self.rdbBlueRay.setText(_translate("MainWindow", "BluRay"))
+        self.rdbWebDL.setText(_translate("MainWindow", "Web-Dl"))
+        self.groupBox_2.setTitle(_translate("MainWindow", "Resolution"))
+        self.res1080.setText(_translate("MainWindow", "1080"))
+        self.res480.setText(_translate("MainWindow", "480"))
+        self.res720.setText(_translate("MainWindow", "720"))
+        self.label.setText(_translate("MainWindow", "Movie Name"))
+        self.label_2.setText(_translate("MainWindow", "Download Path"))
+        self.label_3.setText(_translate("MainWindow", "v 1.0.0"))
+        self.groupBox_3.setTitle(_translate("MainWindow", "Logs"))
+        self.detailsBtn.setText(_translate("MainWindow", "Details"))
+        self.label_4.setText(_translate("MainWindow", "Free Subtitle Downloader (Persian/Farsi)"))
+        self.rdbWebDL.setChecked(True)
+        self.res720.setChecked(True)
+
+    def details(self):
+        self.txtlogs.append("Zirnevis")
+        self.txtlogs.append("Open source application for download subtitle only by movie name")
+        self.txtlogs.append("Version 1.0.0")
+        self.txtlogs.append("https://github.com/kiahamedi/zirnevis")
+
+    def getPathDialog(self):
+        path = QFileDialog.getExistingDirectory(None, "Select Directory")
+        self.downloadPath.setText(path)
+
+    def run(self):
+        movie = self.movieName.text()
+        formatt = ""
+        res = ""
+        if self.rdbWebDL.isChecked():
+            formatt = "WEB-DL"
+        if self.rdbBlueRay.isChecked():
+            formatt = "BluRay"
+        if self.rdbWebRip.isChecked():
+            formatt = "WEBRip"
+        if self.rdbBRRip.isChecked():
+            formatt = "BRRip"
+        if self.rdbDVDRip.isChecked():
+            formatt = "DVDRip"
+        if self.rdbHDTV.isChecked():
+            formatt = "HDTV"
+        if self.res480.isChecked():
+            res = "480"
+        if self.res720.isChecked():
+            res = "720"
+        if self.res1080.isChecked():
+            res = "1080"
+        
+        try:
+            self.txtlogs.append("> Start " + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+            app.processEvents()
+            baseUrl = "https://zirdl.info"
+            nameMovie = movie.replace(" ","+")
+
+            searchurl = baseUrl+"/subtitles/searchbytitle?query="+str(nameMovie)+"&l="
+            self.txtlogs.append("> Searching for movie " + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+            app.processEvents()
+            searchPage = requests.get(searchurl)
+            soup = BeautifulSoup(searchPage.content,'html5lib')
+            div = soup.find('div',{"class":"title"})
+            namesArray = nameMovie.split("+")
+
+            searchNameFound = div.text.strip()
+            for check in namesArray:
+                if check not in searchNameFound:
+                    self.txtlogs.append("> Maybe exist this movie " + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+                    app.processEvents()
+        
+
+            urlMovie = baseUrl + div.find('a')['href']+"/farsi_persian/"
+            self.txtlogs.append("> Selected movie " + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+            app.processEvents()
+            self.txtlogs.append("> Searching subtitles " + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+            app.processEvents()
+            moviePage = requests.get(urlMovie)
+
+            counter = 1
+            soup = BeautifulSoup(moviePage.content,'html5lib')
+            for item in soup.find_all('li',{"class":"item"}):
+                for name in item.find_all('ul',{"class":"scrolllist"}):
+                    if formatt in name.text.strip() and res in name.text.strip():
+                        urlDownloadPage = baseUrl + item.find('a',{"class":"download icon-download"})['href']
+                        self.txtlogs.append("> Found url: "+ str(urlDownloadPage) + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+                        app.processEvents()
+                        downloadPage = requests.get(urlDownloadPage)
+                        soup = BeautifulSoup(downloadPage.content,'html5lib')
+                        aURLDOWNLOAD = baseUrl + soup.find('a',{"id":"downloadButton"})['href']
+                        self.txtlogs.append("> Downloading... " + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+                        app.processEvents()
+                        system("wget -O "+str(counter)+".zip '"+aURLDOWNLOAD+"'")
+                        self.txtlogs.append("> Extracting... " + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+                        app.processEvents()
+                        system("unzip "+str(counter)+".zip  && rm "+str(counter)+".zip")
+                        self.txtlogs.append("> Downloaded " + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+                        app.processEvents()
+                        counter += 1
+                        
+                    else:
+                        continue
+                    
+            # Move to Folder
+            MovieDirectory = self.downloadPath.text() + "/" + movie + ' subtitles'
+            system("mkdir '" + MovieDirectory + "' && mv *.srt '" + MovieDirectory + "'")
+            self.txtlogs.append("> Saved " + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+            app.processEvents()
+
+        except:
+            self.txtlogs.append("> Server error, try again " + str(strftime("%Y-%m-%d %H:%M:%S", gmtime())))
+            app.processEvents()
+            return 0
+
+
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
