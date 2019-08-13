@@ -1,5 +1,5 @@
 # zirnevis
-download subtitle only with movies name
+Open source application for download subtitle only by movie name
 > version 1.0.0
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
