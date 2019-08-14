@@ -14,11 +14,11 @@ Open source application for download subtitle only by movie name
 > Arch Linux: sudo pacman -R zirnevis
 
 ## Manual Installation (for any linux)
-> `sudo apt-get install python3`
-> `sudo apt-get install python3-bs4`
-> `sudo apt-get install python3-pyqt5`
-> `sudo apt-get install python3-requests`
-> `sudo apt-get install python3-html5lib`
+> `sudo apt-get install python3`</br>
+> `sudo apt-get install python3-bs4`</br>
+> `sudo apt-get install python3-pyqt5`</br>
+> `sudo apt-get install python3-requests`</br>
+> `sudo apt-get install python3-html5lib`</br>
 > `cd /tmp/ && git clone https://github.com/kiahamedi/zirnevis && cd zirnevis/ && sudo cp zirnevis /usr/bin && sudo cp zirnevis-icon.png /usr/share/icons/ && sudo cp zirnevis.desktop /usr/share/applications/`
 
 ## Manual Uninstallation
