@@ -8,20 +8,23 @@ Open source application for download subtitle only by movie name
 ![alt text](https://raw.githubusercontent.com/kiahamedi/zirnevis/master/ScreenshotGUI.png)
 
 ## Installation
-> Arch Linux: yaourt -S zirnevis
-
-## Uninstall
-> Arch Linux: sudo pacman -R zirnevis
+> Arch Linux: yaourt -S zirnevis</br>
 > For debian base download deb file from here:</br>
 `https://github.com/kiahamedi/zirnevis/releases`
 
+## Uninstall
+> Arch Linux: sudo pacman -R zirnevis
+
+
 ## Manual Installation (for any linux)
-Deps:</br>
+First install deps:</br>
 `install python3`</br>
 `install python3-bs4`</br>
 `install python3-pyqt5`</br>
 `install python3-requests`</br>
 `install python3-html5lib`</br>
+</br>
+Install with:</br>
 `cd /tmp/ && git clone https://github.com/kiahamedi/zirnevis && cd zirnevis/ && sudo cp zirnevis /usr/bin && sudo cp zirnevis-icon.png /usr/share/icons/ && sudo cp zirnevis.desktop /usr/share/applications/`
 
 ## Manual Uninstallation
