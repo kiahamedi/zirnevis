@@ -14,15 +14,16 @@ Open source application for download subtitle only by movie name
 > Arch Linux: sudo pacman -R zirnevis
 
 ## Manual Installation (for any linux)
-> `sudo apt-get install python3`</br>
-> `sudo apt-get install python3-bs4`</br>
-> `sudo apt-get install python3-pyqt5`</br>
-> `sudo apt-get install python3-requests`</br>
-> `sudo apt-get install python3-html5lib`</br>
-> `cd /tmp/ && git clone https://github.com/kiahamedi/zirnevis && cd zirnevis/ && sudo cp zirnevis /usr/bin && sudo cp zirnevis-icon.png /usr/share/icons/ && sudo cp zirnevis.desktop /usr/share/applications/`
+Deps:</br>
+> `install python3`</br>
+> `install python3-bs4`</br>
+> `install python3-pyqt5`</br>
+> `install python3-requests`</br>
+> `install python3-html5lib`</br>
+`cd /tmp/ && git clone https://github.com/kiahamedi/zirnevis && cd zirnevis/ && sudo cp zirnevis /usr/bin && sudo cp zirnevis-icon.png /usr/share/icons/ && sudo cp zirnevis.desktop /usr/share/applications/`
 
 ## Manual Uninstallation
-> `sudo rm /usr/bin/zirnevis && sudo rm /usr/share/icons/zirnevis-icon.png && sudo rm /usr/share/applications/zirnevis.desktop`
+`sudo rm /usr/bin/zirnevis && sudo rm /usr/share/icons/zirnevis-icon.png && sudo rm /usr/share/applications/zirnevis.desktop`
 
 ## Toturial
 for more information visit:<br>
